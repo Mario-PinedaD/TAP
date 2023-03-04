@@ -65,7 +65,6 @@ public class PanelChat extends javax.swing.JPanel {
     add(panelSur, java.awt.BorderLayout.PAGE_END);
   }// </editor-fold>//GEN-END:initComponents
 
-
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton botonAceptar;
   private javax.swing.JButton botonCancelar;

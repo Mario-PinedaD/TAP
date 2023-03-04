@@ -49,8 +49,6 @@ public class VentanaChat extends javax.swing.JFrame { //"Hereda de JFrame"
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  
-
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JMenuBar barraMenu;
   private javax.swing.JMenu menuArchivo;
