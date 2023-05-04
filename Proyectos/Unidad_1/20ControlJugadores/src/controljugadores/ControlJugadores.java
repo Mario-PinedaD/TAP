@@ -4,6 +4,8 @@
  */
 package controljugadores;
 
+import modelos.Jugadores;
+
 /**
  *
  * @author Mario Pineda
@@ -15,12 +17,14 @@ public class ControlJugadores {
    */
   public static void main(String[] args) {
     // TODO code application logic here
-    VentanaJugadores f = new VentanaJugadores();
-    
-    f.setSize(800,600);
-    f.setLocation(100,100);
-    
+    Jugadores modelo = new Jugadores();          //Modelo
+    VentanaJugadores f = new VentanaJugadores(modelo); //Vista
+    OyenteJugadores oyente = new OyenteJugadores(modelo, f); //Controlador
+    f.addEventos(oyente);                       //Registro
+    f.setSize(800, 600);
+    f.setLocation(100, 100);
+
     f.setVisible(true);
   }
-  
+
 }

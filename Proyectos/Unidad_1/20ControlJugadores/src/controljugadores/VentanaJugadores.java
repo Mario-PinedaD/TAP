@@ -4,17 +4,55 @@
  */
 package controljugadores;
 
+import java.awt.event.ActionListener;
+import modelos.Jugadores;
+
 /**
  *
  * @author Mario Pineda
  */
 public class VentanaJugadores extends javax.swing.JFrame {
 
+  private Jugadores jugadores;
+
   /**
    * Creates new form VenatanaJugadores
    */
   public VentanaJugadores() {
     initComponents();
+  }
+
+  public VentanaJugadores(Jugadores modelo) { //Aqui conoce el modelo
+    this.jugadores = modelo;
+    initComponents();
+    actualizarEtiquetas();
+  }
+
+  public void actualizarEtiquetas() {
+    String archivo = jugadores.getNombreArchivo(); //Tomamos el nombre del archivo
+
+    archivo = archivo == null ? "" : archivo; //Si no existe arhcivo, ps se queda vacío nomas
+    this.etiquetaArchivo.setText("<html><b>Archivo: </b>"+archivo+"</html>"); //Se ponen las etiquetas
+    this.etiquetaTotal.setText("<html><b>Total: </b>"+jugadores.getTotalJugadores()+"</html>");
+    this.etiquetaJugar.setText("<html><b>Jugando: </b>"+jugadores.getTotalJugando()+"</html>");
+  }
+
+  public void addEventos(ActionListener oyente) {
+    this.opcionAbrir.addActionListener(oyente);
+    this.opcionEditar.addActionListener(oyente);
+    this.opcionEliminar.addActionListener(oyente);
+    this.opcionGuardar.addActionListener(oyente);
+    this.opcionInicializar.addActionListener(oyente);
+    this.opcionRegistrar.addActionListener(oyente);
+    this.opcionSalir.addActionListener(oyente);
+
+    this.opcionAbrir.setName("abrir");
+    this.opcionEditar.setName("editar");
+    this.opcionEliminar.setName("eliminar");
+    this.opcionGuardar.setName("guardar");
+    this.opcionInicializar.setName("inicializar");
+    this.opcionRegistrar.setName("registrar");
+    this.opcionSalir.setName("salir");
   }
 
   /**
@@ -151,7 +189,6 @@ public class VentanaJugadores extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_opcionEliminarActionPerformed
 
-  
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JMenuBar barraMenu;
