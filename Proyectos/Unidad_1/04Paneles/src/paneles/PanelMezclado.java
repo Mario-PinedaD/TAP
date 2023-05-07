@@ -1,4 +1,3 @@
-
 package paneles;
 
 import java.awt.*;
@@ -9,39 +8,39 @@ import javax.swing.border.Border;
  *
  * @author Mario Pineda
  */
-public class PanelMezclado extends JTabbedPane{
-  
+public class PanelMezclado extends JTabbedPane {
+
   private final Border bordePanelTab;
-  
-  public PanelMezclado(){
+
+  public PanelMezclado() {
     bordePanelTab = BorderFactory.createEtchedBorder();
     addComponentes();
   }
-  
-  private void addComponentes(){
+
+  private void addComponentes() {
     setBackground(Color.CYAN);
     setOpaque(true);
-    setBorder(BorderFactory.createLineBorder(getBackground(),50));
-    addTab("Panel con malla",addPanelConMalla());
-    addTab("Panel con border",addPanelConBorder());
-    addTab("Mezcla de Paneles",mezclaPaneles());
+    setBorder(BorderFactory.createLineBorder(getBackground(), 50));
+    addTab("Panel con malla", addPanelConMalla());
+    addTab("Panel con border", addPanelConBorder());
+    addTab("Mezcla de Paneles", mezclaPaneles());
   }
-  
-  public Component mezclaPaneles(){
+
+  public Component mezclaPaneles() {
     JPanel panel = new JPanel();
     panel.setLayout(new BorderLayout());
-    panel.add(new JButton("Principal"),"Center");
-    
+    panel.add(new JButton("Principal"), "Center");
+
     JPanel panelNorte = new JPanel();  //Un JPanel usa FlowLayout por omisión
     panelNorte.setBackground(Color.WHITE);
 
     panelNorte.add(new JButton("Aceptar"));
     panelNorte.add(new JButton("Cancelar"));
 
-    panel.add(panelNorte,"North");
+    panel.add(panelNorte, "North");
     return panel;
   }
-  
+
   //Con Border no podemos colocer varios objetos en un mismo sentido, 2 en norte, no se puede
   public Component addPanelConBorder() {
     JPanel panel = new JPanel();
