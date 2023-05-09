@@ -5,6 +5,8 @@
 package controljugadores;
 
 import java.awt.event.ActionListener;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import modelos.Jugadores;
 
 /**
@@ -32,12 +34,12 @@ public class VentanaJugadores extends javax.swing.JFrame {
     String archivo = jugadores.getNombreArchivo(); //Tomamos el nombre del archivo
 
     archivo = archivo == null ? "" : archivo; //Si no existe arhcivo, ps se queda vacío nomas
-    this.etiquetaArchivo.setText("<html><b>Archivo: </b>"+archivo+"</html>"); //Se ponen las etiquetas
-    this.etiquetaTotal.setText("<html><b>Total: </b>"+jugadores.getTotalJugadores()+"</html>");
-    this.etiquetaJugar.setText("<html><b>Jugando: </b>"+jugadores.getTotalJugando()+"</html>");
+    this.etiquetaArchivo.setText("<html><b>Archivo: </b>" + archivo + "</html>"); //Se ponen las etiquetas
+    this.etiquetaTotal.setText("<html><b>Total: </b>" + jugadores.getTotalJugadores() + "</html>");
+    this.etiquetaJugar.setText("<html><b>Jugando: </b>" + jugadores.getTotalJugando() + "</html>");
   }
 
-  public void addEventos(ActionListener oyente) {
+  public void addEventos(OyenteJugadores oyente) {
     this.opcionAbrir.addActionListener(oyente);
     this.opcionEditar.addActionListener(oyente);
     this.opcionEliminar.addActionListener(oyente);
@@ -45,6 +47,7 @@ public class VentanaJugadores extends javax.swing.JFrame {
     this.opcionInicializar.addActionListener(oyente);
     this.opcionRegistrar.addActionListener(oyente);
     this.opcionSalir.addActionListener(oyente);
+    this.addWindowListener(oyente);
 
     this.opcionAbrir.setName("abrir");
     this.opcionEditar.setName("editar");
@@ -53,6 +56,14 @@ public class VentanaJugadores extends javax.swing.JFrame {
     this.opcionInicializar.setName("inicializar");
     this.opcionRegistrar.setName("registrar");
     this.opcionSalir.setName("salir");
+  }
+
+  public JTable getTabla() {
+    return tabla;
+  }
+
+  public DefaultTableModel getDatosTabla() {
+    return (DefaultTableModel) tabla.getModel();
   }
 
   /**
