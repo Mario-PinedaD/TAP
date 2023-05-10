@@ -19,7 +19,8 @@ public class TareaCirculosConcentricos {
 
     JFrame f = new JFrame("Circulos Concentricos");
     PanelCirculos panel = new PanelCirculos(8);
-    f.setSize(800, 600);
+    f.add(panel);
+    f.setSize(400, 300);
     f.setLocation(100, 100);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

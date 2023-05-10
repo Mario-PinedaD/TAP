@@ -25,5 +25,15 @@ public class PanelCirculos extends JPanel {
 
     int ancho = this.getWidth();
     int alto = this.getHeight();
+    int radio = 50;
+    int xCentro = ancho / 2;
+    int yCentro = alto / 2;
+
+    this.locate(xCentro, yCentro);
+
+    for (int i = 0; i < circulos; i++) {
+      g.drawOval(xCentro-radio, yCentro-radio, (radio * 2)-10, radio * 2);
+      radio += 10;
+    }
   }
 }
