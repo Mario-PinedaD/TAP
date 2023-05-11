@@ -56,6 +56,8 @@ public class VentanaJugadores extends javax.swing.JFrame {
     this.opcionInicializar.setName("inicializar");
     this.opcionRegistrar.setName("registrar");
     this.opcionSalir.setName("salir");
+    //Le ponemos nombre a la ventana
+    this.setName("ventana");
   }
 
   public JTable getTabla() {

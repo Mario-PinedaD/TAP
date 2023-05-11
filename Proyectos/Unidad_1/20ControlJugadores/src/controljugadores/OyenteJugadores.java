@@ -19,24 +19,47 @@ import modelos.Jugadores;
  */
 public class OyenteJugadores extends WindowAdapter implements ActionListener {
 
+  public static final boolean NOMBRE_ON = true;
+  public static final boolean NOMBRE_OFF = false;
+  public static final boolean COMBOS_ON = true;
+  public static final boolean COMBOS_OFF = false;
+
   private Jugadores jugadores;    //Modelo
   private VentanaJugadores vista; //Vista
   private DefaultTableModel datosTabla;   //Modelo de la tabla
+  private DialogoRegistroJugador dialogo; //Creamos la ventana vacía
 
   public OyenteJugadores(Jugadores jugadores, VentanaJugadores vista) {
     this.jugadores = jugadores;
     this.vista = vista;
     datosTabla = vista.getDatosTabla();
-    
+    dialogo = new DialogoRegistroJugador(vista, true);
+    //Este es el generador de eventos
+    dialogo.addEventos(this);
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
     Component origen = (Component) e.getSource();
-
     switch (origen.getName()) {
       case "abrir": {
         abrirArchivo();
+        break;
+      }
+      case "editar": {
+        dialogo.show("Modificar Jugador", "Modificar", NOMBRE_OFF, COMBOS_ON);
+        break;
+      }
+      case "eliminar": {
+        dialogo.show("Elimnar Jugador", "Eliminar", NOMBRE_OFF, COMBOS_OFF);
+        break;
+      }
+      case "inicializar": {
+
+        break;
+      }
+      case "registrar": {
+        dialogo.show("Registrar Jugador", "Adicionar", NOMBRE_ON, COMBOS_ON);
         break;
       }
       case "guardar": {
@@ -47,7 +70,12 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
         salirPrograma();
         break;
       }
-
+      case "aceptar": { //Boton
+        break;
+      }
+      case "cancelar": { //Boton
+        break;
+      }
     }
   }
 
@@ -101,7 +129,16 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
 
   @Override
   public void windowClosing(WindowEvent e) {
-    salirPrograma();
+    //Identificamos el oyente
+    Component origen =(Component) e.getSource();
+    switch(origen.getName()){
+      case "ventana":{
+        salirPrograma();
+      }
+      case "dialogo":{
+        dialogo.setVisible(false);
+      }
+    }
   }
 
 }

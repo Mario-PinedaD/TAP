@@ -5,6 +5,7 @@
 package controljugadores;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
@@ -19,13 +20,54 @@ public class DialogoRegistroJugador extends javax.swing.JDialog {
   public DialogoRegistroJugador(java.awt.Frame parent, boolean modal) {
     super(parent, modal);
     initComponents();
-    this.setSize(400, 300);
+    this.setSize(400, 300);//Definimos el tamaño de la ventana
   }
-
+  
   public JButton getBotonAceptar() {
     return this.botonAceptar;
   }
+  
+  //Añadimos los eventos para los MENU ITEMS
+  public void addEventos(OyenteJugadores oyente) {
+    this.botonAceptar.addActionListener(oyente);
+    this.botonCancelar.addActionListener(oyente);
+    this.addWindowListener(oyente);
+    
+    //le ponemos nombre a cada cosa q genera eventos y a la venana misma
+    this.botonAceptar.setName("aceptar");
+    this.botonCancelar.setName("cancelar");
+    this.setName("dialogo");
+  }
+  
+  public void show(String titutlo,
+    String textoBoton,
+    boolean estadoNombre,
+    boolean estadoCombos) {
 
+    //Modificamos el titulo de la ventana
+    this.setTitle(titutlo);
+    //Modificamos el texto del boton aceptar para que cambie cuando l necesitemos
+    this.botonAceptar.setText(textoBoton);
+    //Activamos o desactivamos el campo a 
+    this.campoNombre.setEnabled(estadoNombre);
+    //Actvamos o desactivamos las opciones editables
+    this.comboPronostico.setEnabled(estadoCombos);
+    this.comboTemperatura.setEnabled(estadoCombos);
+    this.comboHumedad.setEnabled(estadoCombos);
+    this.comboViento.setEnabled(estadoCombos);
+    this.comboJugar.setEnabled(estadoCombos);
+    //Preguntamos por el padre de la ventana
+    JFrame padre = (JFrame) this.getParent();
+    //Obtenemos las coordenadas del centro de la ventana utilizando la
+    //Posicion del padre, la longitud a la mitad menos la midad de las
+    //Longitudes de las ventanas de dialogo
+    int x = padre.getX() + (padre.getWidth() / 2) - (this.getWidth() / 2);
+    int y = padre.getY() + (padre.getHeight() / 2) - (this.getHeight() / 2);
+    this.setLocation(x, y);
+    
+    this.setVisible(true);
+  }
+  
   public void setComponentes(String[] valores) {
     this.campoNombre.setText(valores[0]);
     this.comboPronostico.setSelectedItem(valores[1]);
@@ -34,7 +76,7 @@ public class DialogoRegistroJugador extends javax.swing.JDialog {
     this.comboViento.setSelectedItem(valores[4]);
     this.comboJugar.setSelectedItem(valores[5]);
   }
-
+  
   public String[] getComponentes() {
     return new String[]{
       this.campoNombre.getText(),
