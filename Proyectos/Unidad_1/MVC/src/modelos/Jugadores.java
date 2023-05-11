@@ -18,7 +18,7 @@ public class Jugadores extends HashMap<String, Jugador> {
 
   //CREATE
   public void adicionarJugador(Jugador jugador) {
-    this.put(jugador.getNombre(), jugador); 
+    this.put(jugador.getNombre(), jugador);
     totalJugadores++;
     totalJugando += jugador.getJugar().equals("Si") ? 1 : 0;
   }
@@ -54,34 +54,34 @@ public class Jugadores extends HashMap<String, Jugador> {
     this.clear();
     totalJugadores = 0;
     totalJugando = 0;
-  }  
-  
+  }
+
   //LECTURA
-  public void leerJugadores(File archivo){
+  public void leerJugadores(File archivo) {
     this.inicializarJugadores();//Limpiamos el mapa
     this.nombreArchivo = archivo.getName(); //Guardamos el nombre del archivo
-    
+
     ArrayList<String> registros = Archivo.leerArchivo(archivo);
-    
-    for(String registro:registros){//Paseamos por todo el archivo
+
+    for (String registro : registros) {//Paseamos por todo el archivo
       Jugador jugador = new Jugador(registro.split(",")); //
       this.adicionarJugador(jugador);
     }
   }
-  
+
   //ESCRITURA
-  public void grabarJugadores(File archivo){
+  public void grabarJugadores(File archivo) {
     ArrayList<String> lista = new ArrayList();
     Iterator<Jugador> iterador = this.values().iterator();
-    while(iterador.hasNext()){
+    while (iterador.hasNext()) {
       Jugador jugador = iterador.next();
+      System.out.println(jugador.toString());
       lista.add(jugador.toString());
     }
     Archivo.grabarArchivo(archivo, lista);
     this.nombreArchivo = archivo.getName();
   }
-  
-  
+
   public String getNombreArchivo() {
     return nombreArchivo;
   }

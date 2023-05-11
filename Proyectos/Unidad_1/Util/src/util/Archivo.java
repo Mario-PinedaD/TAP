@@ -55,10 +55,13 @@ public class Archivo {
         String linea = lineas.get(i);
         buffer.write(linea);
         buffer.newLine();
+        System.out.println(linea+" Archivo");
       }
-
+      buffer.close();
+      
     } catch (IOException ex) {
       System.out.println("Error con el archivo: " + ex);
+      System.exit(-1);
     }
   }
 

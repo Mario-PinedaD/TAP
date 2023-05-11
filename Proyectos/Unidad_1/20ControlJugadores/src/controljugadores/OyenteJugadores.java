@@ -47,19 +47,20 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
         break;
       }
       case "editar": {
-        dialogo.show("Modificar Jugador", "Modificar", NOMBRE_OFF, COMBOS_ON);
-        break;
-      }
-      case "eliminar": {
-        dialogo.show("Elimnar Jugador", "Eliminar", NOMBRE_OFF, COMBOS_OFF);
-        break;
-      }
-      case "inicializar": {
+        editarJugador();
 
         break;
       }
+      case "eliminar": {
+        eliminarJugador();
+        break;
+      }
+      case "inicializar": {
+        inicializarValores();
+        break;
+      }
       case "registrar": {
-        dialogo.show("Registrar Jugador", "Adicionar", NOMBRE_ON, COMBOS_ON);
+        registrarJugador();
         break;
       }
       case "guardar": {
@@ -71,9 +72,11 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
         break;
       }
       case "aceptar": { //Boton
+        actualizarJugador();
         break;
       }
       case "cancelar": { //Boton
+        dialogo.setVisible(false);
         break;
       }
     }
@@ -108,11 +111,83 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
       for (Jugador jugador : jugadores.values()) {
         //Cada que leamos un dato necesitamos una fila
         datosTabla.addRow(jugador.getJugador());
-        vista.actualizarEtiquetas();
+        System.out.println(jugador);
+        
       }
+      vista.actualizarEtiquetas();
+    }
+  }
+  
+  //Método para el boton Aceptar
+  public void actualizarJugador(){
+    
+  }
+
+  //Método para inicializar valores
+  public void inicializarValores() {
+    int seleccion = this.mostrarMensajeSeleccion("Eliminar jugadores", "¿Muerte al infiel?");
+
+    if (seleccion == JOptionPane.YES_OPTION) {
+      //Limpiamos el modelo
+      jugadores.inicializarJugadores(); //MODELO
+      //Limpiamos la tabla
+      datosTabla.setNumRows(0);
+      //Recargamos la etiqueta
+      vista.actualizarEtiquetas();
     }
   }
 
+  //Método para Eliminar un jugador
+  public void eliminarJugador() {
+    if (validarJugador()) {
+      dialogo.show("Elimnar Jugador", "Eliminar",
+        NOMBRE_OFF, COMBOS_OFF);
+    }
+  }
+
+  //Método para editar un jugador
+  public void editarJugador() {
+    if (validarJugador()) {
+      dialogo.show("Modificar Jugador", "Modificar",
+        NOMBRE_OFF, COMBOS_ON);
+    }
+  }
+
+  //Método para Validar que se seleccionó un jugador
+  public boolean validarJugador() {
+    int renglon = vista.getTabla().getSelectedRow();
+    if (renglon != -1) {
+      String[] valores = {
+        (String) datosTabla.getValueAt(renglon, 0),
+        (String) datosTabla.getValueAt(renglon, 1),
+        (String) datosTabla.getValueAt(renglon, 2),
+        (String) datosTabla.getValueAt(renglon, 3),
+        (String) datosTabla.getValueAt(renglon, 4),
+        (String) datosTabla.getValueAt(renglon, 5),};
+      //
+      dialogo.setComponentes(valores);
+    } else {
+      mostrarMensajeError("Error de Registro", "Debes seleccionar un registro de la tabla");
+      return false;
+    }
+    return true;
+  }
+
+  //Método Registrar Jugador
+  public void registrarJugador() {
+    String[] valores = {"", "Soleado", "Caluroso", "Baja", "Si", "SI"};
+    dialogo.setComponentes(valores);
+    dialogo.show("Registrar Jugador", "Adicionar",
+      NOMBRE_ON, COMBOS_ON);
+  }
+
+  //Mostrar mensaje error
+  public void mostrarMensajeError(String titulo, String mensaje) {
+    JOptionPane.showMessageDialog(vista, mensaje,
+      titulo, JOptionPane.OK_OPTION);
+  }
+
+  //Método para la selección de 2 opciones
   public int mostrarMensajeSeleccion(String titulo, String mensaje) {
     return JOptionPane.showConfirmDialog(vista, mensaje,
       titulo, JOptionPane.YES_NO_OPTION);
@@ -130,12 +205,12 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
   @Override
   public void windowClosing(WindowEvent e) {
     //Identificamos el oyente
-    Component origen =(Component) e.getSource();
-    switch(origen.getName()){
-      case "ventana":{
+    Component origen = (Component) e.getSource();
+    switch (origen.getName()) {
+      case "ventana": {
         salirPrograma();
       }
-      case "dialogo":{
+      case "dialogo": {
         dialogo.setVisible(false);
       }
     }
