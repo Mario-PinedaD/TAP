@@ -14,7 +14,7 @@ public class TareaHabitacion {
     
     f.add(panel);
     f.setLocation(100, 100);
-    f.setSize(600, 400);
+    f.setSize(600, 550);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
     f.setVisible(true);
