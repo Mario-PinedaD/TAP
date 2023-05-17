@@ -18,12 +18,12 @@ import modelos.Jugadores;
  * @author Mario Pineda
  */
 public class OyenteJugadores extends WindowAdapter implements ActionListener {
-
+  
   public static final boolean NOMBRE_ON = true;
   public static final boolean NOMBRE_OFF = false;
   public static final boolean COMBOS_ON = true;
   public static final boolean COMBOS_OFF = false;
-
+  
   private Jugadores jugadores;    //Modelo
   private VentanaJugadores vista; //Vista
   private DefaultTableModel datosTabla;   //Modelo de la tabla
@@ -37,7 +37,7 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
     //Este es el generador de eventos
     dialogo.addEventos(this);
   }
-
+  
   @Override
   public void actionPerformed(ActionEvent e) {
     Component origen = (Component) e.getSource();
@@ -48,7 +48,7 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
       }
       case "editar": {
         editarJugador();
-
+        
         break;
       }
       case "eliminar": {
@@ -81,7 +81,7 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
       }
     }
   }
-
+  
   public void grabarArchivo() {
     JFileChooser seleccion = new JFileChooser();
     int opcion = seleccion.showSaveDialog(vista); //Preguntar si quiere guardar
@@ -92,7 +92,7 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
     }
     vista.actualizarEtiquetas();//Actualizamos la etiqueda
   }
-
+  
   public void abrirArchivo() {
     JFileChooser seleccion = new JFileChooser();
     //filtramos los archvivos dependiendo de la "terminñación"
@@ -100,7 +100,7 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
       = new FileNameExtensionFilter("Archivo CSV", "csv");
     seleccion.setFileFilter(filtro);
     int opcion = seleccion.showOpenDialog(vista);
-
+    
     if (opcion == JFileChooser.APPROVE_OPTION) {
       /*
       Volvemos al archivo como nuestro modelo
@@ -117,16 +117,56 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
       vista.actualizarEtiquetas();
     }
   }
-  
+
   //Método para el boton Aceptar
-  public void actualizarJugador(){
-    
+  public void actualizarJugador() {
+    Jugador jugador = new Jugador(dialogo.getComponentes());
+    String nombre = jugador.getNombre();
+    String accion = dialogo.getBotonAceptar().getText();
+    switch (accion) {
+      case "Adicionar": {
+        if (!jugadores.containsKey(nombre)) {
+          jugadores.adicionarJugador(jugador);            //Modelo
+          datosTabla.addRow(jugador.getJugador());  //Vista
+          vista.actualizarEtiquetas();                    //Vista Etiquetas
+          dialogo.setVisible(false);
+        } else {
+          this.mostrarMensajeError("Error de registro", "El jugador " + nombre + " ya está registrado!!");
+        }
+        break;
+      }
+      case "Modificar": {
+        if (jugadores.modificarJugador(jugador) != null) {//Modelo
+          String[] valores = jugador.getJugador();
+          int renglon = vista.getTabla().getSelectedRow();
+          for (int i = 0; i < valores.length; i++) {
+            datosTabla.setValueAt(valores[i], renglon, i); //Vista
+          }
+          vista.actualizarEtiquetas(); //vista
+        } else {
+          this.mostrarMensajeError("Error de modificacion", "El jugador " + nombre + " no se pudo modificar!!");
+        }
+        dialogo.setVisible(false);
+        break;
+      }
+      case "Eliminar": {
+        if (jugadores.eliminarJugador(jugador) != null) {     //Modelo
+          int renglon = vista.getTabla().getSelectedRow();
+          datosTabla.removeRow(renglon);                  //Vista
+          vista.actualizarEtiquetas();                        //Vista
+          dialogo.setVisible(false);
+        } else {
+          this.mostrarMensajeError("Error de cepillado", "El jugador " + nombre + " no se pudo cepillar!!");
+        }
+        break;
+      }
+    }
   }
 
   //Método para inicializar valores
   public void inicializarValores() {
     int seleccion = this.mostrarMensajeSeleccion("Eliminar jugadores", "¿Muerte al infiel?");
-
+    
     if (seleccion == JOptionPane.YES_OPTION) {
       //Limpiamos el modelo
       jugadores.inicializarJugadores(); //MODELO
@@ -192,16 +232,16 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
     return JOptionPane.showConfirmDialog(vista, mensaje,
       titulo, JOptionPane.YES_NO_OPTION);
   }
-
+  
   private void salirPrograma() {
     int seleccion = mostrarMensajeSeleccion("Salir del programa", "¿Desea salir del programa?");
-
+    
     if (seleccion == JOptionPane.YES_OPTION) {
       System.exit(0);
     } else {
     }
   }
-
+  
   @Override
   public void windowClosing(WindowEvent e) {
     //Identificamos el oyente
@@ -215,5 +255,5 @@ public class OyenteJugadores extends WindowAdapter implements ActionListener {
       }
     }
   }
-
+  
 }
