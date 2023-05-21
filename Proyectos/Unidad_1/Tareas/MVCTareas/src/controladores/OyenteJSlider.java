@@ -6,37 +6,34 @@ package controladores;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import modelos.CalculosCirculos;
-import vistas.PanelCirculo;
+import vistas.PanelCirculoSlider;
 
 /**
  *
  * @author Mario Pineda
  */
-public class OyenteCirculos extends MouseAdapter {
+public final class OyenteJSlider implements ChangeListener {
 
   private CalculosCirculos modelo;
-  private PanelCirculo vista;
+  private PanelCirculoSlider vista;
   private int radio;
 
-  public OyenteCirculos(CalculosCirculos modelo, PanelCirculo vista) {
+  public OyenteJSlider(CalculosCirculos modelo, PanelCirculoSlider vista) {
     this.modelo = modelo;
     this.vista = vista;
-    radio = 50;
+    radioInicial();
   }
 
   @Override
-  public void mouseClicked(MouseEvent e) {
-    int rMin = 20;
-    int min = Math.min(this.vista.getHeight(), this.vista.getWidth());
-    radio = (int) (Math.random() * (min / 2));
-    if (radio <= vista.getWidth() / 2 && radio <= vista.getHeight() / 2) {
-      //System.out.println("Raido: " + radio);
-      vista.setRadio(radio);
-      this.calculosEtiquetas();
-      this.actualizarEtiquetas();
-      vista.repaint();
-    }
+  public void stateChanged(ChangeEvent e) {
+    radio = vista.getValorSlider();
+    vista.setRadio(radio);
+    calculosEtiquetas();
+    actualizarEtiquetas();
+    vista.repaint();
   }
 
   public void calculosEtiquetas() {
@@ -52,4 +49,13 @@ public class OyenteCirculos extends MouseAdapter {
     vista.setEtiquetaCircunferencia("Circunferencia " + String.format("%.2f", modelo.getCircunferencia()));
     vista.setEtiquetaArea("Area: " + String.format("%.2f", modelo.getArea()));
   }
+
+  public void radioInicial() {
+    radio = 150;
+    vista.setRadio(radio);
+    calculosEtiquetas();
+    actualizarEtiquetas();
+    vista.repaint();
+  }
+
 }
