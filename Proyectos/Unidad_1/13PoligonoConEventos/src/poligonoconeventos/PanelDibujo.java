@@ -14,7 +14,6 @@ public class PanelDibujo extends JPanel {
 
   public PanelDibujo() {
     setBackground(Color.CYAN);
-    
   }
 
   @Override

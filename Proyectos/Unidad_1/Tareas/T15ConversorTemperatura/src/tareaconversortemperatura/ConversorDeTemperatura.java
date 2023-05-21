@@ -4,7 +4,6 @@ import controladores.OyenteConversor;
 import javax.swing.JFrame;
 import modelos.ConversionesTemperatura;
 import vistas.PanelConversor;
-import vistas.VistaGeneral;
 
 /**
  *
