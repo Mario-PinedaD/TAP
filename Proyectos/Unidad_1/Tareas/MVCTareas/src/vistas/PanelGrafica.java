@@ -4,11 +4,18 @@
  */
 package vistas;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author Mario Pineda
  */
 public class PanelGrafica extends javax.swing.JPanel {
+
+  private int segmentos;
+  private double[] datos;
+  private double suma;
 
   /**
    * Creates new form PanelGrafica
@@ -16,8 +23,28 @@ public class PanelGrafica extends javax.swing.JPanel {
   public PanelGrafica() {
     initComponents();
   }
-  
-  
+
+  @Override
+  public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    int ancho = this.getWidth();
+    int alto = this.getHeight();
+    int radio = Math.min(ancho / 2, alto / 2);
+    g.translate(ancho / 2, alto / 2);
+    int anguloInicial = 0;
+
+    for (int i = 0; i < datos.length; i++) {
+      int rojo = (int) (Math.random() * 256);
+      int verde = (int) (Math.random() * 256);
+      int azul = (int) (Math.random() * 256);
+      Color colorRandom = new Color(rojo, verde, azul);//Nuevo color
+      g.setColor(colorRandom);
+      int angulos = (int) ((360 * datos[i]) / suma); //Obtenemos los segmentos en los q vamos a dividir la grafica
+      g.fillArc(0, 0, radio * 2, radio * 2, anguloInicial, angulos * i);
+      anguloInicial = angulos * i;
+    }
+    g.setColor(Color.red);
+  }
 
   /**
    * This method is called from within the constructor to initialize the form.
@@ -28,26 +55,10 @@ public class PanelGrafica extends javax.swing.JPanel {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    graficaCalculos1 = new modelos.GraficaCalculos();
-
     setLayout(new java.awt.BorderLayout());
-
-    javax.swing.GroupLayout graficaCalculos1Layout = new javax.swing.GroupLayout(graficaCalculos1);
-    graficaCalculos1.setLayout(graficaCalculos1Layout);
-    graficaCalculos1Layout.setHorizontalGroup(
-      graficaCalculos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 400, Short.MAX_VALUE)
-    );
-    graficaCalculos1Layout.setVerticalGroup(
-      graficaCalculos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 300, Short.MAX_VALUE)
-    );
-
-    add(graficaCalculos1, java.awt.BorderLayout.CENTER);
   }// </editor-fold>//GEN-END:initComponents
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private modelos.GraficaCalculos graficaCalculos1;
   // End of variables declaration//GEN-END:variables
 }

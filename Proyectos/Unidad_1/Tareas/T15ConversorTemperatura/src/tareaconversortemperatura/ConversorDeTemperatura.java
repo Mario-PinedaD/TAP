@@ -25,7 +25,7 @@ public class ConversorDeTemperatura {
     //Controlador
     OyenteConversor oyente = new OyenteConversor(conver, panel);
     panel.addEventos(oyente);
-
+    
     JFrame f = new JFrame("Programa Conversor");
     f.add(panel);
     f.setSize(400, 300);

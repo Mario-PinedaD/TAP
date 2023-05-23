@@ -24,6 +24,7 @@ public class GraficaPastelArchivos {
     GraficaCalculos modelo = new GraficaCalculos();//Modelo
     PanelGrafica panel = new PanelGrafica();//Vista
     OyenteGrafica oyente = new OyenteGrafica(modelo, panel);//Controlador
+
     JFrame f = new JFrame("Tarea 18 Grafica de Pastel");
     
     f.add(panel);

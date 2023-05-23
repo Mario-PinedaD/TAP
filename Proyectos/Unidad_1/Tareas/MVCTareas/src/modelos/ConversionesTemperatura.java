@@ -11,6 +11,7 @@ public class ConversionesTemperatura {
   public void convertirFC(double grados) {
     respuesta = (grados - 32) * (5 / 9);
   }
+  
 
   public void convertirCF(double grados) {
     respuesta = (grados * (9 / 5)) + 32;
