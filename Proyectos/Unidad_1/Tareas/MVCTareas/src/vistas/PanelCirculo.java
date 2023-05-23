@@ -52,7 +52,7 @@ public class PanelCirculo extends javax.swing.JPanel {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    circuloTarea1 = new vistas.CirculoTarea();
+    circuloTarea1 = new modelos.CirculoTarea();
     panelSur = new javax.swing.JPanel();
     etiquetaRadio = new javax.swing.JLabel();
     etiquetaArea = new javax.swing.JLabel();
@@ -94,7 +94,7 @@ public class PanelCirculo extends javax.swing.JPanel {
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private vistas.CirculoTarea circuloTarea1;
+  private modelos.CirculoTarea circuloTarea1;
   private javax.swing.JLabel etiquetaArea;
   private javax.swing.JLabel etiquetaCircunferencia;
   private javax.swing.JLabel etiquetaDiametro;

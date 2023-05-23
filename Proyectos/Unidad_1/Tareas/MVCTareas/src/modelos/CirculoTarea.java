@@ -1,4 +1,4 @@
-package vistas;
+package modelos;
 
 import java.awt.Color;
 import java.awt.Graphics;

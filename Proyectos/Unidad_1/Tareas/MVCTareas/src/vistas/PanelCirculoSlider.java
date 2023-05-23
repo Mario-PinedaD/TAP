@@ -61,7 +61,7 @@ public class PanelCirculoSlider extends javax.swing.JPanel {
     etiquetaArea = new javax.swing.JLabel();
     etiquetaDiametro = new javax.swing.JLabel();
     etiquetaCircunferencia = new javax.swing.JLabel();
-    circuloTarea1 = new vistas.CirculoTarea();
+    circuloTarea1 = new modelos.CirculoTarea();
     slideRadio = new javax.swing.JSlider();
 
     setLayout(new java.awt.BorderLayout());
@@ -111,7 +111,7 @@ public class PanelCirculoSlider extends javax.swing.JPanel {
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private vistas.CirculoTarea circuloTarea1;
+  private modelos.CirculoTarea circuloTarea1;
   private javax.swing.JLabel etiquetaArea;
   private javax.swing.JLabel etiquetaCircunferencia;
   private javax.swing.JLabel etiquetaDiametro;
