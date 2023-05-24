@@ -4,10 +4,10 @@
  */
 package circuloradioaleatorio;
 
+import vistas.PanelCirculo;
 import controladores.OyenteCirculos;
 import javax.swing.JFrame;
 import modelos.CalculosCirculos;
-import vistas.PanelCirculo;
 
 /**
  *

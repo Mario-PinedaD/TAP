@@ -6,8 +6,8 @@ package graficapastelarchivos;
 
 import controladores.OyenteGrafica;
 import javax.swing.JFrame;
-import modelos.GraficaCalculos;
-import vistas.PanelGrafica;
+import modelos.GraficaPastel;
+import vistas.VentanaGraficaPastel;
 
 /**
  *
@@ -21,17 +21,15 @@ public class GraficaPastelArchivos {
   public static void main(String[] args) {
     // TODO code application logic here
 
-    GraficaCalculos modelo = new GraficaCalculos();//Modelo
-    PanelGrafica panel = new PanelGrafica();//Vista
-    OyenteGrafica oyente = new OyenteGrafica(modelo, panel);//Controlador
-
-    JFrame f = new JFrame("Tarea 18 Grafica de Pastel");
+    GraficaPastel modelo = new GraficaPastel();//Modelo
+    VentanaGraficaPastel f = new VentanaGraficaPastel(modelo); //Vista
+    OyenteGrafica oyente = new OyenteGrafica(modelo, f);//Controlador
     
-    f.add(panel);
+    f.addEventos(oyente);
     f.setSize(600, 600);
     f.setLocation(100, 100);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     f.setVisible(true);
   }
-  
+
 }
