@@ -4,6 +4,7 @@
  */
 package controladores;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,8 +20,8 @@ import vistas.VentanaGraficaPastel;
  */
 public class OyenteGrafica implements ActionListener {
 
-  private GraficaPastel modelo;
-  private VentanaGraficaPastel vista;
+  private final GraficaPastel modelo;
+  private final VentanaGraficaPastel vista;
 
   public OyenteGrafica(GraficaPastel modelo, VentanaGraficaPastel vista) {
     this.modelo = modelo;
@@ -29,7 +30,19 @@ public class OyenteGrafica implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    this.abrirArchivo();
+    Component disparo = (Component) e.getSource();
+    switch (disparo.getName()) {
+      case "abrir": {
+        System.out.println("Abriendo");
+        abrirArchivo();
+        break;
+      }
+      case "cerrar": {
+        System.exit(0);
+        break;
+      }
+    }
+
   }
 
   //Se abre el poderoso Archivo
@@ -38,6 +51,7 @@ public class OyenteGrafica implements ActionListener {
     int operacion = arch.showOpenDialog(vista);
 
     if (operacion == JFileChooser.APPROVE_OPTION) {
+      System.out.println("Se abrió");
       File archivo = arch.getSelectedFile();
       ArrayList<String> lineas = Archivo.leerArchivo(archivo); //Se lee el archivo
       String cadena = lineas.get(0);
@@ -49,8 +63,9 @@ public class OyenteGrafica implements ActionListener {
       for (String linea : cantidades) {
         datos.add(Integer.parseInt(linea));
       }
-
+      modelo.setDatos(datos);
       vista.repaint();
+      System.out.println("abrirArchivo Finalizado");
     }
 
   }

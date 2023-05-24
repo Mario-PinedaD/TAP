@@ -12,18 +12,23 @@ import modelos.GraficaPastel;
  * @author mario
  */
 public class VentanaGraficaPastel extends javax.swing.JFrame {
-  private GraficaPastel grafica;
+
+  private final GraficaPastel grafica;
 
   /**
    * Creates new form VentanaGraficaPastel
    */
-  public VentanaGraficaPastel(GraficaPastel panel) {
-    this.grafica=grafica;
+  public VentanaGraficaPastel(GraficaPastel grafica) {
+    this.grafica = grafica;
     initComponents();
   }
   
   public void addEventos(ActionListener e) {
     this.opcionAbrir.addActionListener(e);
+    this.opcionCerrar.addActionListener(e);
+    
+    opcionAbrir.setName("abrir");
+    opcionCerrar.setName("salir");
     
   }
 
@@ -36,18 +41,24 @@ public class VentanaGraficaPastel extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    panelDibujarGrafica1 = new modelos.PanelDibujarGrafica(grafica);
     barraMenu = new javax.swing.JMenuBar();
     menuArchivos = new javax.swing.JMenu();
     opcionAbrir = new javax.swing.JMenuItem();
     separador = new javax.swing.JPopupMenu.Separator();
+    opcionCerrar = new javax.swing.JMenuItem();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    getContentPane().add(panelDibujarGrafica1, java.awt.BorderLayout.CENTER);
 
     menuArchivos.setText("Archivo");
 
     opcionAbrir.setText("Abrir Archivo");
     menuArchivos.add(opcionAbrir);
     menuArchivos.add(separador);
+
+    opcionCerrar.setText("Salir");
+    menuArchivos.add(opcionCerrar);
 
     barraMenu.add(menuArchivos);
 
@@ -61,6 +72,8 @@ public class VentanaGraficaPastel extends javax.swing.JFrame {
   private javax.swing.JMenuBar barraMenu;
   private javax.swing.JMenu menuArchivos;
   private javax.swing.JMenuItem opcionAbrir;
-  private javax.swing.JSeparator separador;
+  private javax.swing.JMenuItem opcionCerrar;
+  private modelos.PanelDibujarGrafica panelDibujarGrafica1;
+  private javax.swing.JPopupMenu.Separator separador;
   // End of variables declaration//GEN-END:variables
 }

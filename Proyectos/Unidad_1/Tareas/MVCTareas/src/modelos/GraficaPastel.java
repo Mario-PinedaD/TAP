@@ -36,9 +36,9 @@ public class GraficaPastel extends Circulo implements Dibujable {
   //Colores coquetos
   public void setColorines() {
     for (int i = 0; i < datos.size(); i++) {
-      int red = (int) Math.random() * 255;
-      int green = (int) Math.random() * 255;
-      int blue = (int) Math.random() * 255;
+      int red = (int) (Math.random() * 255);
+      int green = (int) (Math.random() * 255);
+      int blue = (int) (Math.random() * 255);
       colorines.add(new Color(red, green, blue));
     }
   }
@@ -66,12 +66,13 @@ public class GraficaPastel extends Circulo implements Dibujable {
       anguloInicio += angulo;
     }
     if (anguloInicio != 360) {
-      g.fillArc(x - radio, y - radio, 2 * radio, 2 * radio, radio, 360 - anguloInicio);
+      g.fillArc(x - radio, y - radio, 2 * radio, 2 * radio, anguloInicio, 360 - anguloInicio);
     }
   }
 
+  @Override
   public void dibujar(Graphics g) {
-    if (datos.size() > 0) {
+    if (!datos.isEmpty()) {
       this.dibujarGrafica(g);
     }
   }

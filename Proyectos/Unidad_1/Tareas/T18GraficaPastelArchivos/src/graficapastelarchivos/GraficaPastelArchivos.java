@@ -22,14 +22,14 @@ public class GraficaPastelArchivos {
     // TODO code application logic here
 
     GraficaPastel modelo = new GraficaPastel();//Modelo
-    VentanaGraficaPastel f = new VentanaGraficaPastel(modelo); //Vista
-    OyenteGrafica oyente = new OyenteGrafica(modelo, f);//Controlador
+    VentanaGraficaPastel vista = new VentanaGraficaPastel(modelo); //Vista
+    OyenteGrafica oyente = new OyenteGrafica(modelo, vista);//Controlador
     
-    f.addEventos(oyente);
-    f.setSize(600, 600);
-    f.setLocation(100, 100);
-    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    f.setVisible(true);
+    vista.addEventos(oyente);
+    vista.setSize(600, 600);
+    vista.setLocation(100, 100);
+    vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    vista.setVisible(true);
   }
 
 }
