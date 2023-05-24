@@ -29,16 +29,6 @@ public class BarraConImagenes extends JMenuBar {
     String direccionImagen = "/imagenes/open-icon.png";//Esto es para ir viendo que rollo con las imagenes
     ImageIcon iconoAbrir = new ImageIcon(this.getClass().getResource(direccionImagen));
     abrir.setIcon(iconoAbrir);
-    menuArchivo.add(abrir);
-
-    JMenuItem copiar = new JMenuItem("Copiar");
-    tecla = KeyStroke.getKeyStroke('C', InputEvent.CTRL_DOWN_MASK);
-    copiar.setAccelerator(tecla);
-    copiar.setMnemonic('C');
-    String imagen = "/imagenes/copy-icon.png";//Esto es para ir viendo que rollo con las imagenes
-    ImageIcon icono = new ImageIcon(this.getClass().getResource(imagen));
-    copiar.setIcon(icono);
-    menuEdicion.add(copiar);//Hasta aqui termina
 
     JMenuItem guardar = new JMenuItem("Guardar");
     tecla = KeyStroke.getKeyStroke('G', InputEvent.CTRL_DOWN_MASK);
@@ -47,10 +37,58 @@ public class BarraConImagenes extends JMenuBar {
     ImageIcon icon = new ImageIcon(this.getClass().getResource(img));
     guardar.setIcon(icon);
     guardar.setMnemonic('G');
+
+    JMenuItem guardarComo = new JMenuItem("Guardar Como");
+    tecla = KeyStroke.getKeyStroke('G', InputEvent.CTRL_DOWN_MASK | InputEvent.SHIFT_DOWN_MASK);
+    guardarComo.setAccelerator(tecla);
+    String imgGComo = "/imagenes/save-as-icon.png";
+    ImageIcon iconGuardarComo = new ImageIcon(this.getClass().getResource(imgGComo));
+    guardarComo.setIcon(iconGuardarComo);
+    guardarComo.setMnemonic('C');
+
+    JMenuItem salir = new JMenuItem("Salir");
+    tecla = KeyStroke.getKeyStroke(115, InputEvent.ALT_DOWN_MASK);
+    salir.setAccelerator(tecla);
+    String imgSalir = "/imagenes/exit-icon.png";
+    ImageIcon iconSalir = new ImageIcon(this.getClass().getResource(imgSalir));
+    salir.setIcon(iconSalir);
+    salir.setMnemonic('S');
+
+    //==
+    JMenuItem copiar = new JMenuItem("Copiar");
+    tecla = KeyStroke.getKeyStroke('C', InputEvent.CTRL_DOWN_MASK);
+    copiar.setAccelerator(tecla);
+    copiar.setMnemonic('C');
+    String imagen = "/imagenes/copy-icon.png";//Esto es para ir viendo que rollo con las imagenes
+    ImageIcon icono = new ImageIcon(this.getClass().getResource(imagen));
+    copiar.setIcon(icono);
+
+    JMenuItem cortar = new JMenuItem("Cortar");
+    tecla = KeyStroke.getKeyStroke('X', InputEvent.CTRL_DOWN_MASK);
+    cortar.setAccelerator(tecla);
+    cortar.setMnemonic('O');
+    String imagenCortar = "/imagenes/cut-icon.png";//Esto es para ir viendo que rollo con las imagenes
+    ImageIcon iconoCortar = new ImageIcon(this.getClass().getResource(imagenCortar));
+    cortar.setIcon(iconoCortar);
     
+    JMenuItem pegar = new JMenuItem("Pegar");
+    tecla = KeyStroke.getKeyStroke('V', InputEvent.CTRL_DOWN_MASK);
+    pegar.setAccelerator(tecla);
+    pegar.setMnemonic('P');
+    String imagenPegar = "/imagenes/paste-icon.png";//Esto es para ir viendo que rollo con las imagenes
+    ImageIcon iconoPegar = new ImageIcon(this.getClass().getResource(imagenPegar));
+    pegar.setIcon(iconoPegar);
+    //=========
+    //Parte de "archivo"
+    menuArchivo.add(abrir);
     menuArchivo.add(guardar);
+    menuArchivo.add(guardarComo);
     menuArchivo.addSeparator();
-    menuArchivo.add(new JMenuItem("Salir"));
+    menuArchivo.add(salir);
+    //Parte de Edicion
+    menuEdicion.add(copiar);//Hasta aqui termina
+    menuEdicion.add(cortar);
+    menuEdicion.add(pegar);
 
   }
 

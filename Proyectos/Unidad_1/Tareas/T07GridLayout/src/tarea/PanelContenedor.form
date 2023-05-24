@@ -50,6 +50,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Snap to Grid"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
           </Properties>
           <Events>

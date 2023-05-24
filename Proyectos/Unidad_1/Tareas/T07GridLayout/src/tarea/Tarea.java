@@ -14,7 +14,7 @@ public class Tarea {
     PanelContenedor panel = new PanelContenedor();
     
     f.add(panel);
-    f.setSize(400, 200);
+    f.setSize(500, 200);
     f.setLocation(100,100);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     

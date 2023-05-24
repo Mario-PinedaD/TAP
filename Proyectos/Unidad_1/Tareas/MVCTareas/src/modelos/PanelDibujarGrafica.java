@@ -14,8 +14,8 @@ public class PanelDibujarGrafica extends JPanel {
 //  public DibujarGrafica(){
 //    this(new ArrayList<Integer>());
 //  }
-  public PanelDibujarGrafica(GraficaPastel grafik) {
-    this.grafica = grafik;
+  public PanelDibujarGrafica(GraficaPastel grafica) {
+    this.grafica = grafica;
   }
 
   @Override

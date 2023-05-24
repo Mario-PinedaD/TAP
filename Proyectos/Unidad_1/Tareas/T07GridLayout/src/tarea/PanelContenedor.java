@@ -49,6 +49,7 @@ public class PanelContenedor extends javax.swing.JPanel {
 
     botonSnap.setText("Snap to Grid");
     botonSnap.setToolTipText("");
+    botonSnap.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     botonSnap.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
     botonSnap.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
