@@ -4,6 +4,9 @@
  */
 package hiloscontadoresgraficos;
 
+import java.awt.event.ActionListener;
+import javax.swing.JSlider;
+
 /**
  *
  * @author Mario Pineda
@@ -15,6 +18,14 @@ public class PanelContador extends javax.swing.JPanel {
    */
   public PanelContador() {
     initComponents();
+  }
+
+  public void addEventos(ActionListener oyente) {
+    this.botonIniciar.addActionListener(oyente); //Registro
+  }
+
+  public JSlider[] getSliders() {
+    return new JSlider[]{barra1, barra2};
   }
 
   /**

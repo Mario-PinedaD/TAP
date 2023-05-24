@@ -18,13 +18,14 @@ public class HilosContadoresGraficos {
   public static void main(String[] args) {
     JFrame f = new JFrame();
     PanelContador panel = new PanelContador();
-    
+    OyenteContador oyente = new OyenteContador(panel);
+    panel.addEventos(oyente);
     f.add(panel);
     f.setSize(400, 600);
-    f.setLocation(100,100);
+    f.setLocation(100, 100);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
+
     f.setVisible(true);
   }
-  
+
 }
