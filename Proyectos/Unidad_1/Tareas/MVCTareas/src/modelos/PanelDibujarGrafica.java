@@ -29,7 +29,7 @@ public class PanelDibujarGrafica extends JPanel {
       int tamaño = grafica.getDatos().size();
       if (tamaño > 0) {
         g.translate(ancho / 2, alto / 2);
-        grafica.setRadio(min / 2);
+        grafica.setRadio(min -50);
         grafica.x = 0;
         grafica.y = 0;
         grafica.dibujar(g);
