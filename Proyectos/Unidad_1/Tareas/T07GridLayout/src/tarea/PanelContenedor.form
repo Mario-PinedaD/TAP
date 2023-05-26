@@ -53,9 +53,6 @@
             <Property name="horizontalAlignment" type="int" value="2"/>
             <Property name="horizontalTextPosition" type="int" value="4"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSnapActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="labelX">
           <Properties>
@@ -126,9 +123,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ok"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonOkActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonCancelar">
           <Properties>

@@ -1,7 +1,4 @@
 package chat;
-
-import util.Ambiente;
-
 /**
  *
  * @author Mario Pineda

@@ -4,19 +4,34 @@
  */
 package modelos;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mario
  */
-public class TrianguloInscrito {
+public class TrianguloInscrito extends JPanel {
 
-  private int radio;
-  private int[] xPos = new int[2];
-  private int[] yPos = new int[2];
-  
-  
-  public void llenarDatos(){
-    
+  private final TrianguloCirculo triangulo;
+
+  public TrianguloInscrito() {
+    triangulo = new TrianguloCirculo();
   }
 
+  public TrianguloInscrito(TrianguloCirculo triangulo) {
+    this.triangulo = triangulo;
+    this.setBackground(Color.CYAN);
+  }
+
+  @Override
+  public void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    int ancho = this.getWidth();
+    int alto = this.getHeight();
+
+    g.translate(ancho / 2, alto / 2);
+    triangulo.dibujar(g);
+  }
 }

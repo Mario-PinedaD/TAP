@@ -51,11 +51,6 @@ public class PanelContenedor extends javax.swing.JPanel {
     botonSnap.setToolTipText("");
     botonSnap.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     botonSnap.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-    botonSnap.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        botonSnapActionPerformed(evt);
-      }
-    });
     panelWest.add(botonSnap);
 
     labelX.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -89,11 +84,6 @@ public class PanelContenedor extends javax.swing.JPanel {
     panelEst.setLayout(new java.awt.GridLayout(3, 1, 0, 10));
 
     botonOk.setText("Ok");
-    botonOk.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        botonOkActionPerformed(evt);
-      }
-    });
     panelEst.add(botonOk);
 
     botonCancelar.setText("Cancel");
@@ -104,14 +94,6 @@ public class PanelContenedor extends javax.swing.JPanel {
 
     add(panelEst, java.awt.BorderLayout.EAST);
   }// </editor-fold>//GEN-END:initComponents
-
-  private void botonOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOkActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_botonOkActionPerformed
-
-  private void botonSnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSnapActionPerformed
-    // TODO add your handling code here:
-  }//GEN-LAST:event_botonSnapActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
