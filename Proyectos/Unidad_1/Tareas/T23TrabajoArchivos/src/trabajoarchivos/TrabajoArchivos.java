@@ -19,8 +19,8 @@ public class TrabajoArchivos {
    */
   public static void main(String[] args) {
     // TODO code application logic here
-    VentanaEditorArchivo f = new VentanaEditorArchivo();
-    OyenteEditorArchivo oyente = new OyenteEditorArchivo(f);
+    VentanaEditorArchivo f = new VentanaEditorArchivo(); //Vista
+    OyenteEditorArchivo oyente = new OyenteEditorArchivo(f); //controlador
     f.addEventos(oyente);
     f.setLocation(100, 100);
     f.setSize(600, 600);
