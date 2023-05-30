@@ -6,7 +6,7 @@ import javax.swing.JFrame;
  *
  * @author Mario Pineda
  */
-public class Tarea {
+public class TareaGrid {
 
   public static void main(String[] args) {
     

@@ -86,5 +86,13 @@ public class OyenteTeclado extends KeyAdapter {
      */
     System.out.println("Tecla = " + e.getKeyCode());
   }
+  
+  /*try {
+      Integer.parseInt(cadena);
+      return true;
+    } catch (NumberFormatException nfe) {
+      JOptionPane.showMessageDialog(null, "Debes ingresar numeros", "Error", JOptionPane.WARNING_MESSAGE);
+      return false;
+    }*/
 
 }

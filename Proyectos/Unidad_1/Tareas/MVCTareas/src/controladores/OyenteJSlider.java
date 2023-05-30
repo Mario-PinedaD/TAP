@@ -4,8 +4,6 @@
  */
 package controladores;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import modelos.CalculosCirculos;

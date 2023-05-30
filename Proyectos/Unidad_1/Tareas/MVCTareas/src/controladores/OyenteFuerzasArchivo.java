@@ -15,7 +15,6 @@ import modelos.Fuerza;
 import modelos.Fuerzas;
 import util.Archivo;
 import vistas.FrameEquilibrio;
-import vistas.PanelFuerzas;
 
 /**
  *

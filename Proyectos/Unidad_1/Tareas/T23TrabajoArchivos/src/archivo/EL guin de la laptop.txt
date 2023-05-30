@@ -1,0 +1,68 @@
+Laptop huawei guion
+
+-----comenzamos-------
+Siempre que pensamos en un dispositivo de trabajo, lo primero que se nos viene a la mente es una computadora de escritorio
+Ya que son la mejor opcion a la hora del trabajo mas pesado que se nos puede ocurrir, desde fotoshop hasta levantamientos 
+arquitectonicos o videojuegos, sin embargo no podemos llevar la pc con nosotros, bueno si podemos llevarla pero no es lo mas portable que podemos necesitar
+para eso existen las laptops, productos destinados para trabajo o entretenimiento de un buen tamaño, peso, portabilidad y ¿precio?
+okey tal vez en este ultimo no sea mas interesante pero hay que resaltar sus otras cualidades. En este caso tengo la fortuna de
+contar con una huawey matebook 14 de la cual les hablaré mas a detalle en unos momentos. sin nada mas que decir, comencemoos.
+
+-----------desempaquetado------------
+El empaque donde viene la caja viene muy bien protegido, cuenta con una caja que contiene otra caja que contiene un cargador, cable de carga,
+instructivo y si tienes suerte tambien podrás encontrar la laptop, la cual viene asegurada con 2 piezas de ¿espuma?(realmente no se como llamarlo asi que le
+diremos espuma), los cuales protegen bien la laptop para que no se mueva en ningun momento del viaje ni que pueda sufrir daño alguno, sacando las espumas 
+protectoras tenemos dentro la pc la cual tambien contiene un ptorector de plastico para evitar rayaduras, no venia con plastico en la pantalla asi que
+no ha`á satisfaccion de quitar plastico.
+Primero comenzaremos con la parte externa y despues continuaremos con todos los aspectos de trabajo como edicion de video fotografìa etc.
+
+----------apariencia-----------------
+Una vez desempaquetada A primera vista podemos apreciar mucha calidad y un trabajo muy bien logrado por parte de huawei con este color plateado de la parte de atras, un teclado
+compretamente negro con teclas retroiluminadas, una pantalla con muy pero muy poco borde un boton de encendido que cuenta con un lector de huellas
+y con una webcam?, pues si ya que por temas de seguridad podrás encontrar la webcam en la parte del teclado donde podrás dar clic y se asomará automaticamente
+
+--------pantalla---------------------
+Una de las joyitas mas importantes de este equipo es la pantalla ya que contamos con una pantalla de 14 pultgadas IPS QuadHD con una resolucion de 2160 x 1440p. 
+Muy buenos colores, suficiente respuesta con esos 60Hz de movimiento, ademas que es perfecta para edicion de fotografìa y video con esa calidad de color,
+aunque si tienes pensado usarla para trabajos dejame decirte que tambien se desenvuelve muy bien, para la edicion de texto como programacion o simplemente esrár
+leyendo paginas web es muy como tener la informacion lo mejor aprovechada posible
+
+----------Teclado---------------
+El teclado es muy comodo es de formato chiclet por lo que es muy sueno a la hora de trabajar con el, casi no se escucha el sonido de las teclas por lo que es bastante
+silencioso. en concreto para mexico se encuentra la distribucion de teclado de español españa, con los simbolos de mayor y menos que en la parte de la izquierda y el enter
+mas grande. En la parte superior del teclado pordemos encontrar teclas con atajos para controlar lo que pasa en el c, desde controlar la iluminacion hasta el volumen 
+microfono internet etc.
+
+---------tracpad---------------
+Al igual que el teclado el tracpad se tiene muy bien, es muy esponsivo y tiene varios atajos, con 1 dedo puedes deslizar el mouse como normalmente lo harías, con
+2 dedos puedes movere hacia arribam abajo isquierda o derecha en paginas web y aplicaciones, como si fuese un scroll, con 3 dedos puedes cambiar de ventanas, salir al
+escritorio y abrir mas escritorios. La sensibilidad es muy buena ya que con un pequeño toque ya estás dando el clic aunque si te parece molesto o necesitas mas sensibilidad
+puedes configurarlo desde la Configuracion.
+
+--------audio-----------------
+Para audio tenemos 4 microfonos que se cuentran en la parte inferior del equipo, justamente debajo del tracpad, y tambien contamos con un sonido estereo con 2 altavoces
+uno en el inferior izquierdo y otro en el derecho
+(poner calidad del microfono y la del altavoz con el tokyo revenge y alguna que otra cancion)
+
+--------Conectuvidad---------
+En el apartado de conectividad contamos con lo tipico, 2 puertos usb 3.2 (supuestamente), un jac de 3.5mm para auriculares. un puesto HDMI y un usb tipo c con el que podremos
+sacarle todavñia mas partido a este maquinon, ya que si deseamos aumentar las capacidades de este pc podremos usar un hub usb c, y ya que no cuenta con un puerto ethernet
+será mas que necesario para sacarle todo el partido al net y al pc, ojo cabe aclarar que no es obligatorio un subc puedes usar un usb tipo a de toda la vida per asegurate 
+que sea 3.0 para que tenga una mejor transmision de archivos. 
+
+(pausa y dice eso: si tienen interes en saber si influye el ujsb 2.0 a 3.0 les dejaré una etiqueta o un video
+en la descripcion para que vayn a verlo)
+
+-------hardware-------------
+Esta pc no solamente tiene las caracteristicas que escucharon para vender mas, claro que no, cuenta tambien con un hardware potente para la mayoria de trabjos que se requiera,
+obviamente que si te dedicas a levantar diseños arquitectonicos o a jugar minecraft RTX a 4k con nitrogeno liquido, esta pc no es para ti, como procesador contamos con
+un Ryzen 7 4800H con 8 nucleos y 16 hilos de trabajo. a una frecuencia base de 2.9Ghz y con un tope maximo de 4.2Ghz, hasta este procesador es mejor que el Ryzen 5 1600 de mi
+pc principal... (inserte meme de: chale estoy ya no es gracioso es triste).  16gb de ram y un SSD Nvme de 512gb, el cual curiosamente viene dividido en 2 partes tal parece
+una donde viene instalado el sistema operativo y otro vacio donde puedes almacenar tus archivos, en lo personal te recomiendo que vayas a configuracion y cambies
+donde se almacena el contenido nuevo para evitar problemas en un futuro. Gracias al SSD que tenemos los tiempos de carga son mucho cortos que si tuvieramos el sistema
+en un disco duro tradicional. esto se nota si lo comparamos con una pc de escritorio normal.
+Su sistema de enfriamiento tambien es bueno y haciendo alguna que otra prueba se mantiene a buenas temperaturas en lo que cabe la verdad. ara zi comencemos con los programas p
+
+-----Diferencias-------
+El precio de esta pc ronda alrededor de los 1400 o 1500 dolares aunque depende cual eligas puede ser mas barato, tienes con menos procesador, ram, ssd, sin pantalla tactil etc.
+

@@ -4,7 +4,6 @@ import controladores.OyenteRaton;
 import java.awt.Color;
 import javax.swing.JFrame;
 import modelos.Circulo;
-import modelos.Figura;
 import vistas.PanelDibujable;
 
 /**
