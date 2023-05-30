@@ -24,22 +24,36 @@ public class OyenteContador implements ActionListener {
 
     hilo1 = new Hilo(panel.getSliders()[0]);
     hilo2 = new Hilo(panel.getSliders()[1]);
-    System.out.println("Hilo1: " + hilo1.getState());
-    System.out.println("Hilo2: " + hilo2.getState());
+//    System.out.println("Hilo1: " + hilo1.getState());
+//    System.out.println("Hilo2: " + hilo2.getState());
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    if (hilo1.getState() != State.TERMINATED) {
+
+    if (!hilo1.isAlive()) {
+      if (hilo1.getState() == State.TERMINATED) {
+        hilo1 = new Hilo(panel.getSliders()[0]);
+      }
       hilo1.start();
     }
-    if (hilo2.getState() != State.TERMINATED) {
+    if (!hilo2.isAlive()) {
+      if (hilo2.getState() == State.TERMINATED) {
+        hilo2 = new Hilo(panel.getSliders()[1]);
+      }
       hilo2.start();
     }
-    System.out.println("Hilo1: " + hilo1.getState());
-    System.out.println("Hilo2: " + hilo2.getState());
-    System.out.println("Hilo 1 = " + hilo1.isAlive());
-    System.out.println("Hilo 2 = " + hilo2.isAlive());
+//    System.out.println("Hilo1: " + hilo1.getState());
+//    System.out.println("Hilo2: " + hilo2.getState());
+//    System.out.println("Hilo 1 = " + hilo1.isAlive());
+//    System.out.println("Hilo 2 = " + hilo2.isAlive());
+
+//    if (hilo1.getState() != State.TERMINATED) {
+//      hilo1.start();
+//    }
+//    if (hilo2.getState() != State.TERMINATED) {
+//      hilo2.start();
+//    }
   }
 
   public class Hilo extends Thread {
