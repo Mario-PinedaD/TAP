@@ -4,6 +4,7 @@
  */
 package hiloscontadoresgraficos;
 
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.Thread.State;
@@ -69,11 +70,12 @@ public class OyenteContador implements ActionListener {
       for (int i = barra.getMinimum(); i <= barra.getMaximum(); i++) {
         barra.setValue(i);
         try {
-          Thread.sleep(50);
+          Thread.sleep(10);
         } catch (InterruptedException ex) {
           System.out.println("Fijese que no se pudo porque: " + ex);
           System.exit(-1);
         }
+        Toolkit.getDefaultToolkit().sync();
       }
     }
 
