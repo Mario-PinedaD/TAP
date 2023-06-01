@@ -48,4 +48,11 @@ class PanelAnimacion extends JPanel {
     imagenes.setLocation(x, y);
     imagenes.dibujar(g);
   }
+
+  /**
+   * @return the etiqueta
+   */
+  public JLabel getEtiqueta() {
+    return etiqueta;
+  }
 }
