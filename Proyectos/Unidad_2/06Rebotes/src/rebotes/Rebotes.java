@@ -4,7 +4,11 @@
  */
 package rebotes;
 
+import java.time.Duration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import modelos.Circulo;
 import modelos.Circulos;
 import vistas.PanelDibujable;
 
@@ -22,9 +26,10 @@ public class Rebotes {
     Circulos circulos = new Circulos();//MOODELO
 
     PanelDibujable vista = new PanelDibujable(circulos);
+
+    OyenteRebotes oyente = new OyenteRebotes(circulos, vista);
     
-    OyenteRebotes oyente = new OyenteRebotes(circulos,vista);
-    
+
     vista.addEventos(oyente);
 
     JFrame f = new JFrame("Ventana Rebotes");

@@ -18,11 +18,12 @@ public class ExmenProblema3 {
   public static void main(String[] args) {
     JFrame f = new JFrame();
     Figura3 f3 = new Figura3();
-
+    
     f.setSize(700, 600);
     f.add(f3);
+    f.setLocation(100, 100);
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     f.setVisible(true);
   }
-
+  
 }

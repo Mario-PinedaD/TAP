@@ -18,10 +18,10 @@ public class ExamenProblema1 {
   public static void main(String[] args) {
     // TODO code application logic here
     JFrame f01 = new JFrame("Examen");
-    PanelFigu1 f1 = new PanelFigu1();
+    PruebaPanel f1 = new PruebaPanel();
 
     f01.setLocation(100, 100);
-    f01.setSize(350, 350);
+    f01.setSize(350, 450);
     f01.add(f1);
     f01.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

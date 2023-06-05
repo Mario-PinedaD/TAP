@@ -46,7 +46,7 @@ public class PanelFigu1 extends javax.swing.JPanel {
     jButton1 = new javax.swing.JButton();
     jButton2 = new javax.swing.JButton();
 
-    setLayout(new java.awt.BorderLayout());
+    setLayout(new java.awt.BorderLayout(10, 20));
 
     jLabel1.setText("Datos del auto");
 

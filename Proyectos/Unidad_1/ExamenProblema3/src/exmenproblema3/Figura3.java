@@ -13,21 +13,26 @@ public class Figura3 extends JPanel {
 
     int ancho = this.getWidth() / 2;
     int alto = this.getHeight() / 2;
-
+    Color[] colores = {Color.YELLOW, Color.RED, Color.WHITE};
     g.translate(ancho / 4, alto / 4);
     int radio = 200;
-    int lado = radio / 4;
+    int lado = 3;
+    int diferencia = 360 / lado;
 
     g.setColor(Color.BLACK);
-
+    g.drawArc(0, 0, 2 * radio, 2 * radio, 0, 360);
+    for (int i = 0; i < lado; i++) {
+      g.setColor(colores[i]);
+      g.fillArc(0, 0, 2 * radio, 2 * radio, i * diferencia-30, i+1 * diferencia);
+    }
     //
-    g.drawArc(0, 0, 2 * radio, 2 * radio, 210, 240);
-    g.setColor(Color.YELLOW);
-    g.fillArc(0, 0, 2 * radio, 2 * radio, -30, 120);
-    g.setColor(Color.red);
-    g.fillArc(0, 0, 2 * radio, 2 * radio, 210, 120);
-    g.setColor(Color.WHITE);
-    g.fillArc(0, 0, 2 * radio, 2 * radio, 90, 120);
+//    g.drawArc(0, 0, 2 * radio, 2 * radio, 210, 240);
+//    g.setColor(Color.YELLOW);
+//    g.fillArc(0, 0, 2 * radio, 2 * radio, -30, 120);
+//    g.setColor(Color.red);
+//    g.fillArc(0, 0, 2 * radio, 2 * radio, 210, 120);
+//    g.setColor(Color.WHITE);
+//    g.fillArc(0, 0, 2 * radio, 2 * radio, 90, 120);
 
     g.translate(this.getWidth() - (ancho - 100), alto / 2);
 
