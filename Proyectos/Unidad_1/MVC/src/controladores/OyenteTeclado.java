@@ -45,11 +45,13 @@ public class OyenteTeclado extends KeyAdapter {
           vista.repaint();
         }
       }
-      case VK_LEFT, VK_A -> { //Si el modelo se mantiene dentro del panel(es decir es mayor a x=0) se moverá
-        if (modelo.x - radio - inc >= 0) {
-          modelo.x -= inc;
-          vista.repaint();
-        }
+      case //VK_LEFT, 
+      VK_A -> { //Si el modelo se mantiene dentro del panel(es decir es mayor a x=0) se moverá
+//        if (modelo.x - radio - inc >= 0) {
+//          modelo.x -= inc;
+//          vista.repaint();
+//        }
+        modelo.setColor(Color.BLUE);
       }
       case VK_RIGHT, VK_D -> { //Si el modelo se mantiene dentro del panel(es decir es mayor a x=Ancho) se moverá
         if (modelo.x + radio + inc <= vista.getWidth()) {
@@ -70,12 +72,20 @@ public class OyenteTeclado extends KeyAdapter {
         vista.repaint();
       }
       case VK_PLUS -> {
-        circulo.setRadio(circulo.getRadio() + inc);
-        vista.repaint();
+        if (circulo.getRadio() <= 200) {
+          circulo.setRadio(circulo.getRadio() + inc);
+          vista.repaint();
+        }
       }
       case VK_MINUS -> {
-        circulo.setRadio(circulo.getRadio() - inc);
-        vista.repaint();
+        if (circulo.getRadio() >= 10) {
+          circulo.setRadio(circulo.getRadio() - inc);
+          vista.repaint();
+        }
+        System.out.println("Radio: " + circulo.getRadio());
+      }
+      case VK_V -> {
+        modelo.setColor(Color.GREEN);
       }
     }
 
@@ -85,8 +95,9 @@ public class OyenteTeclado extends KeyAdapter {
     3 rojo
      */
     System.out.println("Tecla = " + e.getKeyCode());
+    vista.repaint();
   }
-  
+
   /*try {
       Integer.parseInt(cadena);
       return true;
@@ -94,5 +105,4 @@ public class OyenteTeclado extends KeyAdapter {
       JOptionPane.showMessageDialog(null, "Debes ingresar numeros", "Error", JOptionPane.WARNING_MESSAGE);
       return false;
     }*/
-
 }
