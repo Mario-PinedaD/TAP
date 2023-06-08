@@ -7,12 +7,13 @@ package malla;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
+import modelos.Dibujable;
 
 /**
  *
  * @author Mario Pineda
  */
-public class PanelDibujo extends JPanel {
+public class PanelDibujo extends JPanel implements Dibujable{
 
   private int verticales;
   private int horizontales;
@@ -37,19 +38,20 @@ public class PanelDibujo extends JPanel {
     dibujar(g);
   }
 
-  private void dibujar(Graphics g) {
+  @Override
+  public void dibujar(Graphics g) {
     int alto = this.getHeight();
     int ancho = this.getWidth();
 
-    int posX = ancho / horizontales;
-    int posY = alto / verticales;
+    int difX = ancho / horizontales;
+    int difY = alto / verticales;
     //Lineas horizontales
     for (int i = 0; i <= verticales; i++) {
-      g.drawLine(0, i * posY, ancho, i * posY);
+      g.drawLine(0, i * difY, ancho, i * difY);
     }
     //Lineas verticales
     for (int i = 0; i <= horizontales; i++) {
-      g.drawLine(i * posX, 0, i * posX, alto);
+      g.drawLine(i * difX, 0, i * difX, alto);
     }
     this.repaint();
   }

@@ -29,6 +29,8 @@ public class OyenteRaton extends MouseAdapter { //Hereda de la clase que utiliza
     //System.out.println("("+e.getX()+","+e.getY()+")");
     modelo.x = e.getX();
     modelo.y = e.getY();
+    modelo.setAlto(vista.getHeight());
+    modelo.setAncho(vista.getWidth());
     vista.repaint();
   }
 

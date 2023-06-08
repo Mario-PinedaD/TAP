@@ -25,7 +25,6 @@ public final class PanelRandom extends javax.swing.JPanel {
 
   public void generarBotones() {
     ArrayList<Integer> dat = new ArrayList<>();
-
     for (int i = 0; i < arr.length; i++) {
       dat.add(arr[i]);
     }

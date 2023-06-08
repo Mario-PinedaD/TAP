@@ -8,10 +8,8 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.InputStream;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import util.Archivo;
 
 /**
@@ -38,12 +36,11 @@ public class OyenteVentana implements ActionListener {
     Component disparo = (Component) e.getSource();
 
     switch (disparo.getName()) {
-      case "abrir": {
+      case "abrir" ->  {
         System.out.println("Abre");
         abrirArchivo();
-        break;
       }
-      case "salir": {
+      case "salir" -> {
         System.out.println("Sale");
         System.exit(0);
       }
@@ -62,10 +59,9 @@ public class OyenteVentana implements ActionListener {
       String cadena = lineas.get(0);
       String[] cantidades = cadena.split(",");
       for (String linea : cantidades) {
-        datos.add(Integer.parseInt(linea));
+        datos.add(Integer.parseInt(linea.trim()));
         System.out.println(linea);
       }
-
       for (int i = 0; i < datos.size(); i++) {
         switch (i) {
           case 0 -> {
@@ -76,14 +72,17 @@ public class OyenteVentana implements ActionListener {
             y = datos.get(i);
             System.out.println("Ye equivale a " + y);
           }
-          default -> System.out.println("Mas de 2 datos");
+          default ->
+            System.out.println("Mas de 2 datos");
         }
       }
       this.panel.setHorizontales(x);
       this.panel.setVerticales(y);
 
     }
+
     panel.repaint();
+
     vista.repaint();
   }
 }

@@ -47,7 +47,9 @@ public class VentanaEditor extends javax.swing.JFrame implements ActionListener 
 
       areaTexto.setText("");//Dejamos vacio el area de texto para q al abrir un nuevo archivo aparezca unicamente ese
       for (String linea : lineas) {
+
         //Añade todas las lineas al textArea con el Salto de linea para q no se vea feo
+        //areaTexto.append(linea.replace(" ", "") + "\n");//Con el replace podemos eliminar los espacios;
         areaTexto.append(linea + "\n");//append unicamente adiciona sin simportar que haya algo antes
       }
 
