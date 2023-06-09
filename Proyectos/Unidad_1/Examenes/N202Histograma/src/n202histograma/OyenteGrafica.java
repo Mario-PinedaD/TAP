@@ -13,20 +13,22 @@ import java.awt.event.MouseEvent;
  */
 public class OyenteGrafica extends MouseAdapter {
 
-  private DatosHistograma datos;
-  private PanelGrafica panel;
+  private DatosHistograma modelo;
+  private PanelGrafica vista;
 
   public OyenteGrafica(DatosHistograma datos, PanelGrafica panel) {
-    this.datos = datos;
-    this.panel = panel;
+    this.modelo = datos;
+    this.vista = panel;
   }
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    panel.setDatos(datos.generarDatos());
-    panel.setColores(datos.getColorines());
+    vista.setDatos(modelo.generarDatos());
+    System.out.println("Se añaden los datos en el oyente");
+    vista.setColores(modelo.getColorines());
+    System.out.println("Se añaden los colores en el oyente");
     System.out.println("Se pinta");
-    panel.repaint();
+    this.vista.repaint();
   }
 
 }

@@ -21,8 +21,8 @@ public class N202Histograma {
     DatosHistograma modelo = new DatosHistograma();
     PanelGrafica panel = new PanelGrafica();
     OyenteGrafica oyente = new OyenteGrafica(modelo, panel);
-    
     panel.addEventos(oyente);
+    
     JFrame f = new JFrame("Ventana Diagolo");
     f.add(panel);
     f.setSize(500, 500);

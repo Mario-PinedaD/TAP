@@ -27,11 +27,15 @@ public class OyenteRaton extends MouseAdapter { //Hereda de la clase que utiliza
   @Override
   public void mouseMoved(MouseEvent e) {
     //System.out.println("("+e.getX()+","+e.getY()+")");
-    modelo.x = e.getX();
-    modelo.y = e.getY();
-    modelo.setAlto(vista.getHeight());
-    modelo.setAncho(vista.getWidth());
-    vista.repaint();
+    if (modelo.x + modelo.getRadio() + 20 < vista.getWidth() && modelo.y + modelo.getRadio() + 20 < vista.getHeight()
+      && modelo.x - modelo.getRadio() - 20 > 0 && modelo.y - modelo.getRadio() - 20 > 0) {
+      modelo.x = e.getX();
+      modelo.y = e.getY();
+      modelo.setAlto(vista.getHeight());
+      modelo.setAncho(vista.getWidth());
+      vista.repaint();
+    }
+
   }
 
   //Boton Presionado
